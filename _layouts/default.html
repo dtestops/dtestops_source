@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+{% assign fullUrl = site.url | append: site.baseurl %}
+{% include header.html %}
+=======
 <!DOCTYPE html>
 <html lang='{{ site.language }}'>
 
@@ -30,11 +34,20 @@
 
 </head>
 
+>>>>>>> 1af565b6d1930b85de6fcca5950f74bf7f5a85ac
 <body>
-    <header id='top' class='main-header'>
-
+    <header id='top' class='main-header {{ site.header-style }}'>
+       
         <div class='module title color-1'>
-            <h1><a href='{{ site.url }}/'>{{ site.name }}</a></h1>
+            {% if page.title %}
+                <a href='{{ fullUrl }}' title='{{ site.name }}'>
+                    <h2>{{ site.name }}</h2>
+                </a>
+            {% else %}
+                <a href='{{ fullUrl }}' title='{{ site.name }}'>
+                    <h1>{{ site.name }}</h1>
+                </a>
+            {% endif %}
         </div>
 
         <div class='module description color-2'>
@@ -42,10 +55,17 @@
         </div>
 
         <nav class='module main-menu color-4'>
-            <a href='{{ site.url }}/'>Home</a>
-            <a href='{{ site.url }}/about/'>About</a>
-            <a href='{{ site.url }}/contact/'>Contact</a>
+            <a href='{{ fullUrl }}/'>Home</a>
+            <a href='{{ fullUrl }}/about/'>About</a>
+            <a href='{{ fullUrl }}/contact/'>Contact</a>
         </nav>
+        
+        <!--<div class='module search color-3'>
+            <form name='cse' action='https://www.google.com/search' method='get'>
+                <input type='hidden' name='sitesearch' value=''>
+                <input id='dMSearch' name='q' type='text' value='' placeholder='Search...'>
+            </form>
+        </div>-->
 
         <div class='module links color-3'>
             <a href='https://github.com/{{ site.github }}' title='Profile in Github' target='_blank'>github</a>

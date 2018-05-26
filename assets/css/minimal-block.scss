@@ -17,6 +17,10 @@ $color-2: #34495e; /* Description background */
 $color-3: #f2f2f2; /* Modules background */
 $color-4: #7f8c8d; /* Main menu background */
 
+$table-odd: #f8f8f8;
+$table-even: #f2f2f2;
+$table-border: #dddddd;
+
 $font-stack: "Open Sans", sans-serif;
 $font-size: 18px;
 
@@ -124,6 +128,8 @@ nav {
     line-height: 1.7;
     text-align: center;
     width: 35%;
+    
+    z-index: 999;
 
 
     h1, h2 {
@@ -147,6 +153,10 @@ nav {
         padding: 0.1em;
         font-size: 1.1em;
     }
+}
+
+header.fixed {
+    position: fixed;
 }
 
 .module.search {
@@ -271,10 +281,15 @@ article {
 -------------------------------------------------------------------------*/
 
 code {
-    background: $color-3;
     font: 0.9em monospace;
     line-height: 1.2em;
     padding: 0.1em;
+    
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 pre {
@@ -312,22 +327,24 @@ sub, sup { color: #444; }
 abbr, acronym { cursor: help; }
 
 table {
-    border: 1px solid #a1a1a1;
+    border: 1px solid $table-border !important;
     border-collapse: collapse;
     font-size: 0.8em;
     margin: 0.5em 0em;
     width: 100%;
+    
+    thead th { font-weight: 700; }
 
     tr { border: none !important; }
 
     td, th {
-        border: 1px solid #a1a1a1;
-        padding: 0.2em;
+        border: 1px solid $table-border;
+        padding: 0.4em;
     }
 
-    thead tr { background: $color-3 !important; }
-    tr:nth-child(odd) { background: $color-3; }
-    tr:nth-child(even)  { background: $color-0; }
+    thead tr { background: $table-even; }
+    tr:nth-child(odd) { background: $table-odd; }
+    tr:nth-child(even)  { background: $table-even; }
 
 }
 
@@ -548,18 +565,24 @@ div.awesomplete {
 
 @media (max-width: 850px) {
 
-    body { font-size: large; }
+    body { font-size: 18px; }
+    
+    .fixed { position: relative !important; }
 
     .main-header,
     .main-content {
         padding: 0.75em;
         width: 100%;
 
-        .title { margin-top: 0 !important; }
+        .title { margin-top: 0; }
     }
 
-    .main-header .module { margin-left: 0; }
+    .main-header .module { margin: 5px auto; }
     .main-content .module { margin-top: 0; }
+    
+    .main-header .title {
+        h1, h2 { font-size: 1.5em; }
+    }
 
     nav { text-align: center; }
     nav br { display: none; }

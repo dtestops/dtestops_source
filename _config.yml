@@ -5,8 +5,10 @@ name: "Minimal-Block"
 description: "Minimalistic, friendly, responsive."
 language: "en"
 
-url: http://localhost:4000
+url: "http://localhost:4000"
 baseurl: ''
+
+header-style: 'fixed'
 
 #------------------------------------------------------------------------------
 # Markdown processor and code highlighting
