@@ -12,10 +12,10 @@
 -------------------------------------------------------------------------*/
 
 $color-0: #d1d1d1; /* Main background */
-$color-1: #2c3e50; /* Title background */
-$color-2: #34495e; /* Description background */
+$color-1: #804d00; /* Title background */
+$color-2: #b36b00; /* Description background */
 $color-3: #f2f2f2; /* Modules background */
-$color-4: #7f8c8d; /* Main menu background */
+$color-4: #e68a00; /* Main menu background */
 
 $font-stack: "Open Sans", sans-serif;
 $font-size: 18px;
@@ -73,7 +73,7 @@ a {
 
 header {
     margin: 0 !important;
-    padding: 0 !important; 
+    padding: 0 !important;
 }
 
 article {
@@ -103,12 +103,12 @@ nav {
         text-transform: uppercase;
         margin: 0px 5px;
     }
-    
+
     a:hover, a:active {
         border-bottom-color: $color-3;
         text-decoration: none !important;
     }
-    
+
     a:active { background: rgba(0,0,0,0.2); }
 
 }
@@ -142,7 +142,7 @@ nav {
 
 
     .description { color: $color-3; }
-    
+
     .main-menu {
         padding: 0.1em;
         font-size: 1.1em;

@@ -1,23 +1,23 @@
 #------------------------------------------------------------------------------
 # General
 #------------------------------------------------------------------------------
-name: "Minimal-Block"
-description: "Minimalistic, friendly, responsive."
+name: "DTestOps"
+description: "Continual Growth"
 language: "en"
 
-url: http://localhost:4000
+url: https://dtestops.com
 baseurl: ''
 
 #------------------------------------------------------------------------------
 # Markdown processor and code highlighting
 #------------------------------------------------------------------------------
-markdown: kramdown
+markdown: redcarpet
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlighter: rouge
 
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+# kramdown:
+#   input: GFM
+#   syntax_highlighter: rouge
 
 #------------------------------------------------------------------------------
 # Pagination and friendly URLs
@@ -29,12 +29,12 @@ permalink: /:title
 #------------------------------------------------------------------------------
 # Social sharing, comments and RSS.
 #------------------------------------------------------------------------------
-disqus-id: yourusername
+disqus-id:
 
 enable-share: true
-twitter: yourusername
-github: yourusername
-google: +yourusername
+twitter: derek_downey
+github: dtest
+linkedin: derekjdowney
 
 rss-feed-limit: 10
 rss-show-full: false
